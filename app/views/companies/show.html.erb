@@ -1,0 +1,139 @@
+
+<div class="container">
+
+
+	<p>
+	  <strong>prename:</strong>
+	  <%= @company.prename %>
+	</p>
+	 
+	<p>
+	  <strong>company_name:</strong>
+	  <%= @company.company_name %>
+	</p>
+	
+	
+	<p>
+	  <strong>regtype:</strong>
+	  <%= @company.regtype %>
+	</p>
+	 
+	<p>
+	  <strong>streeta:</strong>
+	  <%= @company.streeta %>
+	</p>
+	
+	
+	<p>
+	  <strong>streetb:</strong>
+	  <%= @company.streetb %>
+	</p>
+	 
+	<p>
+	  <strong>streetc:</strong>
+	  <%= @company.streetc %>
+	</p>
+	
+	
+	
+	<p>
+	  <strong>city:</strong>
+	  <%= @company.city %>
+	</p>
+	 
+	<p>
+	  <strong>region:</strong>
+	  <%= @company.region %>
+	</p>
+	
+	
+	<p>
+	  <strong>postcode:</strong>
+	  <%= @company.postcode %>
+	</p>
+	 
+	<p>
+	  <strong>country:</strong>
+	  <%= @company.country %>
+	</p>
+	
+	<hr>	
+	
+	
+	
+	<h2>people </h2>
+	
+	<% @company.people.each do |person| %>
+	  <p>
+	    <strong>salutation:</strong>
+	    <%= person.salutation %>
+	  </p>
+	 
+	  <p>
+	    <strong>firstname:</strong>
+	    <%= person.firstname %>
+	  </p>
+	  
+	  <p>
+	    <strong>lastname:</strong>
+	    <%= person.lastname %>
+	  </p>
+
+	<p>  
+	  <%= link_to 'Destroy person', [person.company, person],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+   </p>
+
+
+	<% end %>
+
+	
+	
+	<hr>
+	
+	<%= form_with(model: [ @company, @company.people.build ], local: true) do |form| %>
+	   <p>
+	    <%= form.label :salutation %><br>
+	    
+	    <%= form.select(:salutation, [
+	    
+			 ['Mr' , 1 ], 
+			 ['Mrs' , 2], 
+			 ['Ms' , 3], 
+	    
+	     ] ) %>
+	  </p>
+	  <p>
+	    <%= form.label :firstname %><br>
+	    <%= form.text_area :firstname %>
+	  </p>
+	  <p>
+	    <%= form.label :lastname %><br>
+	    <%= form.text_area :lastname %>
+	  </p>
+	  <p>
+	    <%= form.submit %>
+	  </p>
+	<% end %>
+	
+	<hr>
+	
+	
+	<%= link_to 'Edit company', edit_company_path(@company) %>   |
+	<!-- remove the @ sign is you're using it for index view -->
+	
+	
+	<%= link_to 'Destroy', company_path(@company),
+	              method: :delete,
+	              data: { confirm: 'Are you sure?' } %> 		|
+	<!-- remove the @ sign is you're using it for index view -->
+	
+	<%= link_to 'companies List', companies_path %>
+
+
+</div>
+
+
+
+

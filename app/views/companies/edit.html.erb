@@ -1,0 +1,67 @@
+<%= form_with scope: :company, url: companies_path, local: true do |form| %>
+
+<div class="container">
+  <p>
+    <%= form.label :prename %><br>
+    <%= form.text_field :prename %>
+  </p>
+ 
+  <p>
+    <%= form.label :company_name
+ %><br>
+    <%= form.text_field :company_name
+ %>
+  </p>
+ 
+  <p>
+    <%= form.label :regtype %><br>
+    <%= form.text_field :regtype %>
+  </p>
+
+  <p>
+    <%= form.label :streeta %><br>
+    <%= form.text_field :streeta %>
+  </p>
+
+  <p>
+    <%= form.label :streetb %><br>
+    <%= form.text_field :streetb %>
+  </p>
+
+  <p>
+    <%= form.label :streetc %><br>
+    <%= form.text_field :streetc %>
+  </p>
+
+  <p>
+    <%= form.label :city %><br>
+    <%= form.text_field :city %>
+  </p>
+
+  <p>
+    <%= form.label :region %><br>
+    <%= form.text_field :region %>
+  </p>
+
+  <p>
+    <%= form.label :postcode %><br>
+    <%= form.text_field :postcode %>
+  </p>
+
+  <p>
+    <%= form.label :country %><br>
+    <%= form.text_field :country %>
+  </p>
+
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+</div>
+
+
+
+<%= link_to 'companies List', companies_path %>

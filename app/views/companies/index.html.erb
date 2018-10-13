@@ -1,0 +1,75 @@
+
+<h1>Listing companies</h1>
+
+<%= link_to 'Create new company', new_company_path %>
+
+ 
+<script>
+	$(document).ready(function() {
+	    $("#dt").DataTable();
+	} );
+</script>
+
+<table id="dt" class="table table-striped table-hover" style="width:100% ">
+  <thead><tr>
+    <th>prename</th>
+    <th>company_name</th>
+    <th>regtype</th>
+    <th>streeta</th>
+	<th>streetb</th>
+    <th>streetc</th>
+	<th>city</th>
+    <th>region</th>
+	<th>postcode</th>
+    <th>country</th>
+    <th>SHOW</th>
+    <th>EDIT</th>
+    <th>DESTROY</th>
+  </tr></thead>
+ 	
+ 	<tbody>
+  <% @companies.each do |company| %>
+    <tr>
+      <td><%= company.prename %></td>
+      <td><%= company.company_name %></td>
+      <td><%= company.regtype %></td>
+      <td><%= company.streeta %></td>
+      <td><%= company.streetb %></td>
+      <td><%= company.streetc %></td>
+      <td><%= company.city %></td>
+      <td><%= company.region %></td>
+      <td><%= company.postcode %></td>
+      <td><%= company.country %></td>
+      <td><%= link_to 'Show', company_path(company) %></td>
+      <td><%= link_to 'Edit ', edit_company_path(company) %></td>
+      <td>
+			<%= link_to 'Destroy', company_path(company),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %> 
+
+      </td>
+    </tr>
+  <% end %>
+ 	</tbody>
+  
+    <tfoot><tr>
+    <th>prename</th>
+    <th>company_name</th>
+    <th>regtype</th>
+    <th>streeta</th>
+	<th>streetb</th>
+    <th>streetc</th>
+	<th>city</th>
+    <th>region</th>
+	<th>postcode</th>
+    <th>country</th>
+    <th>SHOW</th>
+    <th>EDIT</th>
+    <th>DESTROY</th>
+    
+  </tr></tfoot>
+</table>
+
+
+
+

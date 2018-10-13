@@ -1,0 +1,10 @@
+class Company < ApplicationRecord
+
+
+	##these goes to the models
+	# belongs_to :company
+			
+	has_many :people, dependent: :destroy
+
+
+end
