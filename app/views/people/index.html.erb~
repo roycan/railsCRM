@@ -1,0 +1,49 @@
+		
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+			    $('#td').DataTable( {
+			        dom: 'Blfrtip',
+			        
+						colReorder: true , 
+					//	responsive: true ,	
+					//	rowGroup: true,			        
+					        
+			        buttons: [
+			            'copy', 'csv', 'excel', 'pdf', 'print', 'colvis'
+			        ]
+			    } );
+			} );
+				
+		</script>
+			
+		
+<table id="td" class="table table-striped table-hover" style="width:100">
+  <thead><tr>
+    <th>salutation</th>
+    <th>firstname</th>
+    <th>lastname</th>
+    <th>company</th>
+  </tr></thead>
+ 	
+ 	<tbody>
+  <% @people.each do |person| %> 
+    <tr>
+      <td><%= person.salutation.name %> </td>
+      <td><%= person.firstname %> </td>
+      <td><%= person.lastname %> </td>
+      <td><%= person.company_id %> </td>
+    </tr>
+  <% end %>
+ 	</tbody>
+  
+    <tfoot><tr>
+    <th>salutation</th>
+    <th>firstname</th>
+    <th>lastname</th>
+    <th>company</th>
+    
+  </tr></tfoot>
+</table>
+
+

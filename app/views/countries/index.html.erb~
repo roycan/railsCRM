@@ -1,0 +1,66 @@
+
+<div class="container">
+
+		<h1>Listing countries</h1>
+		
+
+		
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+			    $('#t2').DataTable( {
+			        dom: 'Blfrtip',
+			        
+						colReorder: true , 
+						responsive: true ,	
+					//	rowGroup: true,			        
+					        
+			        buttons: [
+			            'copy', 'csv', 'excel', 'pdf', 'print', 'colvis'
+			        ]
+			    } );
+			} );
+				
+		</script>
+		
+		
+		 
+		<table id="t2" class="table table-striped table-hover  " style="width:100% ">
+		
+			  <thead><tr>
+				    <th> ID</th>
+				    <th>Name</th>
+				    <th>show</th>
+				    <th>destroy</th>
+			  </tr></thead>
+			 
+			 	<tbody>
+			  <% @countries.each do |country| %>
+				    <tr>
+				      <td><%= country.id %></td>
+				      <td><%= country.name %></td>
+				      <td><%= link_to 'Show', country_path(country) %></td>
+						<td>
+						<%= link_to 'Destroy', country_path(@country),
+						              method: :delete,
+						              data: { confirm: 'Are you sure?' } %> 
+						<!-- remove the @ sign is you're using it for index view -->
+						</td>
+				    </tr>
+			  <% end %>
+			  </tbody>
+			  
+				<tfoot><tr>
+				    <th> ID</th>
+				    <th>Name</th>
+				    <th>show</th>
+				    <th>destroy</th>
+			  </tr></tfoot>  
+			  
+		</table>
+
+		<hr>
+		<%= link_to 'Create new country', new_country_path %>
+		
+    
+</div>

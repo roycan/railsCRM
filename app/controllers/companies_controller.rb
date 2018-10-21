@@ -47,6 +47,7 @@ class CompaniesController < ApplicationController
 	def show
 		# render plain: "Show page here"
 		@company = Company.find(params[:id])
+		@person = Person.new
 	end		
 	
 
@@ -72,7 +73,7 @@ class CompaniesController < ApplicationController
 	def company_params
 		params.require(:company).permit(:prename, :company_name, 
 			:regtype , :streeta , :streetb, :streetc, :city, 
-			:region, :postcode, :country )
+			:region, :postcode, :country_id )
 	end	
 
 	

@@ -54,7 +54,7 @@
 	 
 	<p>
 	  <strong>country:</strong>
-	  <%= @company.country %>
+	  <%= @company.country.name %>
 	</p>
 	
 	<hr>	
@@ -64,26 +64,26 @@
 	<h2>people </h2>
 	
 	<% @company.people.each do |person| %>
-	  <p>
-	    <strong>salutation:</strong>
-	    <%= person.salutation %>
-	  </p>
-	 
-	  <p>
-	    <strong>firstname:</strong>
-	    <%= person.firstname %>
-	  </p>
-	  
-	  <p>
-	    <strong>lastname:</strong>
-	    <%= person.lastname %>
-	  </p>
-
-	<p>  
-	  <%= link_to 'Destroy person', [person.company, person],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-   </p>
+		  <p>
+		    <strong>salutation:</strong>
+		    <%= person.salutation.name %>
+		  </p>
+		 
+		  <p>
+		    <strong>firstname:</strong>
+		    <%= person.firstname %>
+		  </p>
+		  
+		  <p>
+		    <strong>lastname:</strong>
+		    <%= person.lastname %>
+		  </p>
+	
+		<p>  
+		  <%= link_to 'Destroy person', [person.company, person],
+	               method: :delete,
+	               data: { confirm: 'Are you sure?' } %>
+	   </p>
 
 
 	<% end %>
@@ -91,31 +91,54 @@
 	
 	
 	<hr>
+
+
+	<h2>New Person</h2>
+
+	<%= form_with(model: @person, url: people_path, local: true) do |form| %>
+
+			<p>
+			
+			  <div class="field">
+			    <%= form.label :salutation_id %><br /> 
+			    <%= form.collection_select :salutation_id, Salutation.order(:order), :id, :name, include_blank: true %>
+			  </div>
+			</p>
 	
-	<%= form_with(model: [ @company, @company.people.build ], local: true) do |form| %>
-	   <p>
-	    <%= form.label :salutation %><br>
-	    
-	    <%= form.select(:salutation, [
-	    
-			 ['Mr' , 1 ], 
-			 ['Mrs' , 2], 
-			 ['Ms' , 3], 
-	    
-	     ] ) %>
-	  </p>
-	  <p>
-	    <%= form.label :firstname %><br>
-	    <%= form.text_area :firstname %>
-	  </p>
-	  <p>
-	    <%= form.label :lastname %><br>
-	    <%= form.text_area :lastname %>
-	  </p>
-	  <p>
-	    <%= form.submit %>
-	  </p>
+
+	
+		  <p>		  
+		  
+		  
+		    <%= form.label :firstname %><br>
+		    <%= form.text_field :firstname %>
+		  </p>
+		  <p>
+		    <%= form.label :lastname %><br>
+		    <%= form.text_field :lastname %>
+		  </p>
+		  
+		  		 
+		  
+			<p>
+			
+			  <div class="field">
+			    <%= form.label :company_id %><br /> 
+			    <%= form.collection_select :company_id, Company.order(:company_name), :id, :company_name, include_blank: true %>
+			  </div>
+			</p>
+		  
+		  
+		  
+		  <p>
+		    <%= form.submit %>
+		  </p>
+		  
+		  
+		  
+		  
 	<% end %>
+	
 	
 	<hr>
 	

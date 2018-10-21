@@ -7,4 +7,10 @@ class Company < ApplicationRecord
 	has_many :people, dependent: :destroy
 
 
+		
+	validates :company_name, presence: true,
+	                    length: { minimum: 4 }
+
+
+
 end

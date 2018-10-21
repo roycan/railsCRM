@@ -18,6 +18,8 @@
 	    </div>
 	  <% end %>
 	  
+	  
+	  
 <div class="container">
   <p>
     <%= form.label :prename %><br>
@@ -66,11 +68,12 @@
     <%= form.text_field :postcode %>
   </p>
 
-  <p>
-    <%= form.label :country %><br>
-    <%= form.text_field :country %>
-  </p>
 
+
+  <div class="field">
+    <%= form.label :country_id %><br />
+    <%= form.collection_select :country_id, Country.order(:name), :id, :name, include_blank: true %>
+  </div>
 
 
   <p>
