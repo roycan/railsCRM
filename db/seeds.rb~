@@ -43,7 +43,7 @@ CSV.foreach(Rails.root.join("companies.csv"), headers: true) do |row|
     company.city = row[6]
     company.region = row[7]
     company.postcode = row[8]
-	 company.country_id = row[9]
+	 company.country = row[9]
     
     
    end

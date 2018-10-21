@@ -6,10 +6,11 @@ class Company < ApplicationRecord
 			
 	has_many :people, dependent: :destroy
 
+	belongs_to :country
 
 		
 	validates :company_name, presence: true,
-	                    length: { minimum: 5 }
+	                    length: { minimum: 4 }
 
 
 
