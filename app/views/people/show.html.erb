@@ -1,0 +1,26 @@
+	  <p>
+		    <strong>salutation:</strong>
+		    <%= @person.salutation.name %>
+		  </p>
+		 
+		  <p>
+		    <strong>firstname:</strong>
+		    <%= @person.firstname %>
+		  </p>
+		  
+		  <p>
+		    <strong>lastname:</strong>
+		    <%= @person.lastname %>
+		  </p>
+	
+		<p>  
+		  <%= link_to 'Destroy person', [@person.company, @person],
+	               method: :delete,
+	               data: { confirm: 'Are you sure?' } %>
+	   </p>
+
+
+<hr>
+
+
+<%= link_to 'people List', people_path %>

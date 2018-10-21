@@ -1,0 +1,12 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @country.name %>
+</p>
+ 
+<p>
+  <strong>ID:</strong>
+  <%= @country.id %>
+</p>
+
+

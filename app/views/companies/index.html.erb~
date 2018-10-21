@@ -4,12 +4,26 @@
 <%= link_to 'Create new company', new_company_path %>
 
  
-<script>
-	$(document).ready(function() {
-	    $("#dt").DataTable();
-	} );
-</script>
+		
+		<script type="text/javascript">
 
+			$(document).ready(function() {
+			    $('#dt').DataTable( {
+			        dom: 'Blfrtip',
+			        
+						colReorder: true , 
+						responsive: true ,	
+					//	rowGroup: true,			        
+					        
+			        buttons: [
+			            'copy', 'csv', 'excel', 'pdf', 'print', 'colvis'
+			        ]
+			    } );
+			} );
+				
+		</script>
+		
+		
 <table id="dt" class="table table-striped table-hover" style="width:100% ">
   <thead><tr>
     <th>prename</th>
@@ -41,7 +55,7 @@
       <td><%= company.postcode %></td>
       <td><%= company.country %></td>
       <td><%= link_to 'Show', company_path(company) %></td>
-      <td><%= link_to 'Edit company', edit_company_path(company) %></td>
+      <td><%= link_to 'Edit ', edit_company_path(company) %></td>
       <td>
 			<%= link_to 'Destroy', company_path(company),
               method: :delete,
