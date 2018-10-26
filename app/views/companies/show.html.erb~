@@ -54,7 +54,7 @@
 	 
 	<p>
 	  <strong>country:</strong>
-	  <%= @company.country %>
+	  <%= @company.country.name %>
 	</p>
 	
 	<hr>	

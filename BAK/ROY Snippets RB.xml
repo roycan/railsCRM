@@ -245,7 +245,7 @@
     &lt;%%= %2.body %%&gt;
   &lt;/p&gt;
 &lt;%% end %%&gt;
-</after><param name="many what (plural)?"/><param name="one what?"/><param name="many what (singular)?"/></leaf><leaf type="insert" title="dropdown new w/ model" tooltip="this is a form dropdown that gets choices from a table"><before></before><after>		&lt;p&gt;
+</after><param name="many what (plural)?"/><param name="one what?"/><param name="many what (singular)?"/></leaf><leaf type="insert" title="dropdown new w/ model" tooltip="this is a form dropdown that gets choices from a table"><before/><after>		&lt;p&gt;
 		
 		  &lt;div class="field"&gt;
 		    &lt;%%= form.label :%0_id %%&gt;&lt;br /&gt; 
@@ -274,7 +274,7 @@ CSV.foreach(Rails.root.join("%1"), headers: true) do |row|
    end
 end
 
-</after><param name="what (plural)?"/><param name="csv filename w/ extension:"/><param name="what (singular)?"/><param name="what (in Caps, singular)?"/></leaf></branch><branch title="links"><leaf type="insert" title="link to index" tooltip="creating links to route prefixes "><before></before><after>&lt;%%= link_to '%0 List', %0_path %%&gt;</after><param name="index of what (plural)?"/></leaf><leaf type="insert" title="link to new" tooltip="rails link to new&#10;"><before/><after>&lt;%%= link_to 'Create new %0', new_%0_path %%&gt;</after><param name="a new what (singular)?"/></leaf><leaf type="insert" title="link to edit" tooltip="links to the edit view "><before/><after>
+</after><param name="what (plural)?"/><param name="csv filename w/ extension:"/><param name="what (singular)?"/><param name="what (in Caps, singular)?"/></leaf></branch><branch title="links"><leaf type="insert" title="link to index" tooltip="creating links to route prefixes "><before/><after>&lt;%%= link_to '%0 List', %0_path %%&gt;</after><param name="index of what (plural)?"/></leaf><leaf type="insert" title="link to new" tooltip="rails link to new&#10;"><before/><after>&lt;%%= link_to 'Create new %0', new_%0_path %%&gt;</after><param name="a new what (singular)?"/></leaf><leaf type="insert" title="link to edit" tooltip="links to the edit view "><before/><after>
 &lt;%%= link_to 'Edit %0', edit_%0_path(@%0) %%&gt;
 &lt;!-- remove the @ sign is you're using it for index view --&gt;</after><param name="edit what?"/></leaf><leaf type="insert" title="link to destroy" tooltip="view code to delete record from database"><before>
 &lt;%%= link_to 'Destroy', %0_path(@%0),
@@ -444,7 +444,7 @@ rails db:seed
 git config --global color.ui true
 git config --global user.name "YOUR NAME"
 git config --global user.email "YOUR@EMAIL.com"
-ssh-keygen -t rsa -b 4096 -C "YOUR@EMAIL.com"</after></leaf></branch><branch title="rails console"><leaf type="insert" title="truncate table" tooltip="deletes/ destroys the contents of a table"><before>
+ssh-keygen -t rsa -b 4096 -C "YOUR@EMAIL.com"</after></leaf><leaf type="insert" title="ruby no docs" tooltip="don't install ruby docs locally to speed things up"><before/><after>printf "install: --no-rdoc --no-ri\nupdate:  --no-rdoc --no-ri\n" &gt;&gt; ~/.gemrc</after></leaf></branch><branch title="rails console"><leaf type="insert" title="truncate table" tooltip="deletes/ destroys the contents of a table"><before>
 # quick and straight delete
 %0.delete_all
 
@@ -460,6 +460,6 @@ ssh-keygen -t rsa -b 4096 -C "YOUR@EMAIL.com"</after></leaf></branch><branch tit
 </before><after>
 rails generate model %0 title:string body:text %1:references</after><param name="what (in Caps)?"/><param name="belongs_to ? "/></leaf><leaf type="insert" title="generate controller" tooltip=""><before># you can revert by  rails destroy controller %0
 
-</before><after>rails generate controller %0</after><param name="what (in Caps, plural)"/></leaf><leaf type="insert" title="add column to model" tooltip="generates a new column to an existing model / table"><before></before><after>rails generate migration Add%2To%1 %0:string
-</after><param name="col name ?"/><param name="model (in Caps)?"/><param name="col name (in Caps)?"/></leaf><leaf type="insert" title="remove col from model" tooltip="removes a column from a table"><before></before><after>rails generate migration Remove%0From%1 %2:string</after><param name="remove what (in Caps)? "/><param name="table name (in Caps, plural)?"/><param name="column name?"/></leaf></branch></branch>
+</before><after>rails generate controller %0</after><param name="what (in Caps, plural)"/></leaf><leaf type="insert" title="add column to model" tooltip="generates a new column to an existing model / table"><before/><after>rails generate migration Add%2To%1 %0:string
+</after><param name="col name ?"/><param name="model (in Caps)?"/><param name="col name (in Caps)?"/></leaf><leaf type="insert" title="remove col from model" tooltip="removes a column from a table"><before/><after>rails generate migration Remove%0From%1 %2:string</after><param name="remove what (in Caps)? "/><param name="table name (in Caps, plural)?"/><param name="column name?"/></leaf></branch></branch>
 </snippets>
