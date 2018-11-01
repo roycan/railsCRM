@@ -84,6 +84,7 @@ test:
 #
 production:
   <<: *default
-  database: CRM-rb_production
-  username: CRM-rb
-  password: <%= ENV['CRM-RB_DATABASE_PASSWORD'] %>
+  database: railsCRM
+  username: roy
+  password: password
+  host: roy.ca8ycel53azy.ap-southeast-1.rds.amazonaws.com
