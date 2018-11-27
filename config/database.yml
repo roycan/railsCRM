@@ -21,8 +21,8 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: postgres
-  password: pass
-  host: localhost
+  password: password
+  host: hrdocrm.c3nabhjk8fxl.us-east-1.rds.amazonaws.com
   port: 5432
 
 development:
