@@ -20,7 +20,7 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres
+  username: roycan 
   password: pass
   host: localhost
   port: 5432
@@ -84,7 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: railsCRM
-  username: roy
-  password: password
-  host: roy.ca8ycel53azy.ap-southeast-1.rds.amazonaws.com
+  database: CRM-rb_production
+  username: CRM-rb
+  password: <%= ENV['CRM-RB_DATABASE_PASSWORD'] %>

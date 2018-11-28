@@ -53,7 +53,7 @@
       <td><%= company.city %></td>
       <td><%= company.region %></td>
       <td><%= company.postcode %></td>
-      <td><%= company.country %></td>
+      <td><%= company.country.name %></td>
       <td><%= link_to 'Show', company_path(company) %></td>
       <td><%= link_to 'Edit ', edit_company_path(company) %></td>
       <td>

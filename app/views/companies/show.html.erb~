@@ -124,7 +124,7 @@
 			
 			  <div class="field">
 			    <%= form.label :company_id %><br /> 
-			    <%= form.collection_select :company_id, Company.order(:company_name), :id, :company_name, include_blank: true %>
+			    <%= form.collection_select :company_id, Company.order(:company_name), :id, :company_name, include_blank: true, selected: @company.id %>
 			  </div>
 			</p>
 		  

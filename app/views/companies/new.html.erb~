@@ -68,10 +68,6 @@
     <%= form.text_field :postcode %>
   </p>
 
-  <p>
-    <%= form.label :country %><br>
-    <%= form.text_field :country %>
-  </p>
 
 
   <div class="field">

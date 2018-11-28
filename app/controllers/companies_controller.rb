@@ -73,7 +73,7 @@ class CompaniesController < ApplicationController
 	def company_params
 		params.require(:company).permit(:prename, :company_name, 
 			:regtype , :streeta , :streetb, :streetc, :city, 
-			:region, :postcode, :country_id )
+			:region, :postcode )
 	end	
 
 	
